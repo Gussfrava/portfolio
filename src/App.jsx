@@ -137,7 +137,34 @@ function Navbar() {
 }
 
 function Hero() {
+  const nameRef = useRef(null)
+
   useEffect(() => {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()'
+    const targetText = 'Jhonatan Gustavo'
+    let iteration = 0
+    let interval = null
+
+    const scrambleEffect = () => {
+      interval = setInterval(() => {
+        nameRef.current.innerText = targetText
+          .split('')
+          .map((char, index) => {
+            if (index < iteration) {
+              return targetText[index]
+            }
+            return chars[Math.floor(Math.random() * chars.length)]
+          })
+          .join('')
+
+        if (iteration >= targetText.length) {
+          clearInterval(interval)
+        }
+
+        iteration += 1 / 3
+      }, 30)
+    }
+
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
 
     tl.from('.hero__subtitle', { y: 30, opacity: 0, duration: 0.8 })
@@ -146,6 +173,7 @@ function Hero() {
       .from('.hero__description', { y: 30, opacity: 0, duration: 0.8 }, '-=0.5')
       .from('.hero__cta', { y: 30, opacity: 0, duration: 0.6 }, '-=0.4')
       .from('.hero__scroll-indicator', { opacity: 0, duration: 0.6 }, '-=0.2')
+      .call(scrambleEffect, null, '-=1.5')
 
     gsap.to('.hero__scroll-indicator', {
       y: -10,
@@ -154,6 +182,10 @@ function Hero() {
       yoyo: true,
       ease: 'sine.inOut',
     })
+
+    return () => {
+      if (interval) clearInterval(interval)
+    }
   }, [])
 
   return (
@@ -162,7 +194,7 @@ function Hero() {
         <p className="hero__subtitle">Ingeniero en Sistemas Computacionales</p>
         <h1 className="hero__title">
           <span className="hero__title-greeting">Hola, soy</span>
-          <span className="hero__title-name">Jhonatan Gustavo</span>
+          <span className="hero__title-name" ref={nameRef}>Jhonatan Gustavo</span>
         </h1>
         <p className="hero__description">
           +3 años de experiencia en desarrollo web, SEO on-page/técnico y
