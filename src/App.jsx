@@ -238,19 +238,35 @@ function About() {
 
   const features = [
     {
-      icon: '</>',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="16 18 22 12 16 6"></polyline>
+          <polyline points="8 6 2 12 8 18"></polyline>
+        </svg>
+      ),
       title: 'Desarrollo Web',
       text: 'HTML5, CSS3, JavaScript, jQuery, PHP, Bootstrap, WordPress, Elementor y React. Creación de sitios web responsivos y optimizados.',
       size: 'large',
     },
     {
-      icon: '📈',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+      ),
       title: 'SEO & WPO',
       text: 'SEO on-page y técnico, keyword research con Semrush, optimización de Core Web Vitals. Velocidad de carga de 60% a 95% en PageSpeed.',
       size: 'small',
     },
     {
-      icon: '🎨',
+      icon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 19l7-7 3 3-7 7-3-3z"></path>
+          <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path>
+          <path d="M2 2l7.586 7.586"></path>
+          <circle cx="11" cy="11" r="2"></circle>
+        </svg>
+      ),
       title: 'Diseño Web',
       text: 'Diseño de interfaces y prototipos en Figma. Maquetación a partir de diseños UI/UX para sitios web y landing pages.',
       size: 'small',
@@ -527,7 +543,12 @@ function Contact() {
               href="mailto:jhonatangustavo8a@gmail.com"
               className="contact__btn contact__btn--email"
             >
-              <span className="contact__btn-icon">✉️</span>
+              <span className="contact__btn-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </span>
               <span className="contact__btn-text">Enviar Email</span>
             </a>
             <a
@@ -536,7 +557,11 @@ function Contact() {
               rel="noopener noreferrer"
               className="contact__btn contact__btn--whatsapp"
             >
-              <span className="contact__btn-icon">💬</span>
+              <span className="contact__btn-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </span>
               <span className="contact__btn-text">WhatsApp</span>
             </a>
           </div>

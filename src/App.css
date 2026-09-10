@@ -557,10 +557,14 @@ body.light .about__card:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.75rem;
   background: linear-gradient(135deg, #10b981, #06b6d4);
   border-radius: 16px;
   color: white;
+}
+
+.about__card-icon svg {
+  width: 32px;
+  height: 32px;
 }
 
 .about__card-title {
@@ -930,7 +934,13 @@ body.light .contact__btn {
 }
 
 .contact__btn-icon {
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact__btn-icon svg {
+  width: 24px;
+  height: 24px;
 }
 
 .contact__btn-text {
