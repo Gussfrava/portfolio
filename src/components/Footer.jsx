@@ -11,19 +11,9 @@ export default function Footer() {
   ]
 
   return (
-    <footer
-      className={`w-full py-12 sm:py-14 border-t ${
-        theme === 'dark'
-          ? 'border-slate-800/50 text-gray-500'
-          : 'border-gray-100 text-gray-400'
-      }`}
-      style={{ padding: '48px 24px' }}
-    >
-      <div className="w-full max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
-        <a
-          href="#hero"
-          className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent"
-        >
+    <footer className={`w-full border-t ${theme === 'dark' ? 'border-slate-800/50' : 'border-gray-100'}`} style={{ padding: '48px 24px' }}>
+      <div className="w-full max-w-6xl mx-auto flex flex-col items-center gap-8">
+        <a href="#hero" className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
           Portfolio
         </a>
 
@@ -44,7 +34,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className={`text-sm ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`}>
+        <p className={`text-sm text-center ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`}>
           &copy; {new Date().getFullYear()} Portfolio
         </p>
       </div>
