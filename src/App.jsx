@@ -7,6 +7,73 @@ import './App.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
+function CustomCursor() {
+  const cursorRef = useRef(null)
+  const cursorDotRef = useRef(null)
+  const cursorTrailRef = useRef([])
+  const mousePos = useRef({ x: 0, y: 0 })
+  const cursorPos = useRef({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const cursor = cursorRef.current
+    const cursorDot = cursorDotRef.current
+    const trailCount = 8
+
+    const handleMouseMove = (e) => {
+      mousePos.current = { x: e.clientX, y: e.clientY }
+      gsap.to(cursorDot, { x: e.clientX, y: e.clientY, duration: 0.1 })
+    }
+
+    const handleMouseEnter = () => gsap.to(cursor, { opacity: 1, duration: 0.3 })
+    const handleMouseLeave = () => gsap.to(cursor, { opacity: 0, duration: 0.3 })
+
+    const handleLinkEnter = (e) => {
+      gsap.to(cursor, { scale: 2, backgroundColor: 'rgba(16, 185, 129, 0.3)', duration: 0.3 })
+      gsap.to(cursorDot, { scale: 0, duration: 0.2 })
+    }
+
+    const handleLinkLeave = () => {
+      gsap.to(cursor, { scale: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', duration: 0.3 })
+      gsap.to(cursorDot, { scale: 1, duration: 0.2 })
+    }
+
+    document.addEventListener('mousemove', handleMouseMove)
+    document.addEventListener('mouseenter', handleMouseEnter)
+    document.addEventListener('mouseleave', handleMouseLeave)
+
+    const links = document.querySelectorAll('a, button, .project-card, .about__card')
+    links.forEach(link => {
+      link.addEventListener('mouseenter', handleLinkEnter)
+      link.addEventListener('mouseleave', handleLinkLeave)
+    })
+
+    const animateCursor = () => {
+      cursorPos.current.x += (mousePos.current.x - cursorPos.current.x) * 0.15
+      cursorPos.current.y += (mousePos.current.y - cursorPos.current.y) * 0.15
+      gsap.set(cursor, { x: cursorPos.current.x, y: cursorPos.current.y })
+      requestAnimationFrame(animateCursor)
+    }
+    animateCursor()
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove)
+      document.removeEventListener('mouseenter', handleMouseEnter)
+      document.removeEventListener('mouseleave', handleMouseLeave)
+      links.forEach(link => {
+        link.removeEventListener('mouseenter', handleLinkEnter)
+        link.removeEventListener('mouseleave', handleLinkLeave)
+      })
+    }
+  }, [])
+
+  return (
+    <>
+      <div ref={cursorRef} className="custom-cursor" />
+      <div ref={cursorDotRef} className="custom-cursor-dot" />
+    </>
+  )
+}
+
 function Navbar() {
   const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
@@ -457,6 +524,7 @@ function App() {
   return (
     <ThemeProvider>
       <div className="app">
+        <CustomCursor />
         <Navbar />
         <main>
           <Hero />
