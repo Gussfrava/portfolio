@@ -393,7 +393,7 @@ function Projects() {
 
 function Skills() {
   const sectionRef = useRef(null)
-  const barsRef = useRef([])
+  const stackRef = useRef([])
 
   useEffect(() => {
     const section = sectionRef.current
@@ -408,66 +408,84 @@ function Skills() {
       y: 30, opacity: 0, duration: 0.7, delay: 0.2,
     })
 
-    gsap.from(section.querySelectorAll('.skills__card'), {
-      scrollTrigger: { trigger: section.querySelector('.skills__grid'), start: 'top 85%' },
-      y: 50, opacity: 0, duration: 0.8, stagger: 0.2,
-    })
-
-    barsRef.current.forEach((bar, i) => {
-      gsap.from(bar, {
-        scrollTrigger: { trigger: bar, start: 'top 90%' },
-        width: 0, opacity: 0, duration: 1, delay: i * 0.1, ease: 'power2.out',
+    stackRef.current.forEach((item, i) => {
+      gsap.from(item, {
+        scrollTrigger: { trigger: section, start: 'top 70%' },
+        y: 100 + (i % 3) * 50,
+        opacity: 0,
+        duration: 0.8,
+        delay: i * 0.1,
+        ease: 'power3.out',
       })
     })
+
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e
+      const centerX = window.innerWidth / 2
+      const centerY = window.innerHeight / 2
+      const moveX = (clientX - centerX) / centerX
+      const moveY = (clientY - centerY) / centerY
+
+      stackRef.current.forEach((item, i) => {
+        const depth = (i % 3) + 1
+        gsap.to(item, {
+          x: moveX * 10 * depth,
+          y: moveY * 10 * depth,
+          duration: 0.5,
+          ease: 'power2.out',
+        })
+      })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
   }, [])
 
-  const skills = [
-    { name: 'HTML5 / CSS3', level: 95 },
-    { name: 'JavaScript', level: 85 },
-    { name: 'WordPress / Elementor', level: 90 },
-    { name: 'SEO on-page / Técnico', level: 88 },
-    { name: 'GA4 / GTM / Analytics', level: 80 },
-    { name: 'Figma (UI/UX)', level: 75 },
-    { name: 'React (en aprendizaje)', level: 50 },
-    { name: 'Google Ads', level: 70 },
+  const techStack = [
+    { name: 'HTML5', color: '#e34f26' },
+    { name: 'CSS3', color: '#1572b6' },
+    { name: 'JavaScript', color: '#f7df1e' },
+    { name: 'React', color: '#61dafb' },
+    { name: 'WordPress', color: '#21759b' },
+    { name: 'Elementor', color: '#92003b' },
+    { name: 'PHP', color: '#777bb4' },
+    { name: 'jQuery', color: '#0769ad' },
+    { name: 'Bootstrap', color: '#7952b3' },
+    { name: 'Git', color: '#f05032' },
+    { name: 'Figma', color: '#f24e1e' },
+    { name: 'Semrush', color: '#ff642d' },
+    { name: 'GA4', color: '#f9ab00' },
+    { name: 'GTM', color: '#4285f4' },
+    { name: 'Google Ads', color: '#4285f4' },
+    { name: 'Search Console', color: '#4285f4' },
+    { name: 'SQL', color: '#4479a1' },
+    { name: 'Python', color: '#3776ab' },
+    { name: 'Java', color: '#ed8b00' },
+    { name: 'C++', color: '#00599c' },
   ]
 
   return (
     <section id="skills" ref={sectionRef} className="section skills">
       <div className="section__container">
-        <h2 className="section__title skills-title">Mis <span className="section__title-highlight">Skills</span></h2>
+        <h2 className="section__title skills-title">Mi <span className="section__title-highlight">Stack</span></h2>
         <p className="section__description skills-desc">
           Tecnologías y herramientas que domino
         </p>
-        <div className="skills__grid">
-          <div className="skills__card">
-            <h3 className="skills__card-title">Desarrollo & SEO</h3>
-            <div className="skills__list">
-              {skills.map((skill, i) => (
-                <div key={skill.name} className="skill">
-                  <div className="skill__header">
-                    <span className="skill__name">{skill.name}</span>
-                    <span className="skill__percent">{skill.level}%</span>
-                  </div>
-                  <div className="skill__bar">
-                    <div
-                      ref={el => barsRef.current[i] = el}
-                      className="skill__bar-fill"
-                      style={{ width: `${skill.level}%` }}
-                    ></div>
-                  </div>
-                </div>
-              ))}
+        <div className="stack__grid">
+          {techStack.map((tech, i) => (
+            <div
+              key={tech.name}
+              ref={el => stackRef.current[i] = el}
+              className="stack__item"
+              style={{ '--tech-color': tech.color }}
+            >
+              <div className="stack__item-glow"></div>
+              <span className="stack__item-name">{tech.name}</span>
             </div>
-          </div>
-          <div className="skills__card">
-            <h3 className="skills__card-title">Herramientas & Tech</h3>
-            <div className="tools__grid">
-              {['Semrush', 'Google Ads', 'Figma', 'VS Code', 'Git', 'GitHub', 'PageSpeed', 'Lighthouse', 'Search Console', 'Bootstrap', 'PHP', 'SQL'].map(tool => (
-                <div key={tool} className="tool">{tool}</div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
