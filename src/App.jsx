@@ -409,13 +409,6 @@ function Contact() {
                 <p className="contact__info-value">jhonatangustavo8a@gmail.com</p>
               </div>
             </div>
-            <div className="contact__info-item">
-              <span className="contact__info-icon">💼</span>
-              <div>
-                <p className="contact__info-label">LinkedIn</p>
-                <p className="contact__info-value">linkedin.com/in/jhonatan-gustavo</p>
-              </div>
-            </div>
           </div>
           <form className="contact__form">
             <div className="contact__form-row">
