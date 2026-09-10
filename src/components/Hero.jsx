@@ -62,7 +62,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className={`hero-desc text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed ${
+          className={`hero-desc text-center text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed ${
             theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
           }`}
         >

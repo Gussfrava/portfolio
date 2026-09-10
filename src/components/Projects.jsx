@@ -51,7 +51,7 @@ export default function Projects() {
           <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">Proyectos</span>
         </h2>
 
-        <p className={`projects-animate max-w-2xl mx-auto mb-20 leading-relaxed text-base sm:text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+        <p className={`projects-animate text-center max-w-2xl mx-auto mb-20 leading-relaxed text-base sm:text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
         </p>
@@ -82,10 +82,10 @@ export default function Projects() {
               </div>
 
               <div className="p-7">
-                <h3 className={`text-xl font-semibold mb-3 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                <h3 className={`text-xl font-semibold mb-3 text-center ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                   {project.title}
                 </h3>
-                <p className={`text-sm sm:text-base mb-5 leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                <p className={`text-sm sm:text-base mb-5 leading-relaxed text-center ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2 justify-center">

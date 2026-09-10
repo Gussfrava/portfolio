@@ -49,7 +49,7 @@ export default function Skills() {
           <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">Skills</span>
         </h2>
 
-        <p className={`skills-animate max-w-2xl mx-auto mb-20 leading-relaxed text-base sm:text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+        <p className={`skills-animate text-center max-w-2xl mx-auto mb-20 leading-relaxed text-base sm:text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
         </p>

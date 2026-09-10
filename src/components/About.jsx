@@ -51,7 +51,7 @@ export default function About() {
           <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">Mí</span>
         </h2>
 
-        <p className={`about-animate max-w-2xl mx-auto mb-20 leading-relaxed text-base sm:text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+        <p className={`about-animate text-center max-w-2xl mx-auto mb-20 leading-relaxed text-base sm:text-lg ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
           veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
@@ -72,10 +72,10 @@ export default function About() {
               <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center text-white mb-6 mx-auto">
                 {feature.icon}
               </div>
-              <h3 className={`text-xl font-semibold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-semibold mb-4 text-center ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
                 {feature.title}
               </h3>
-              <p className={`text-base leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+              <p className={`text-base leading-relaxed text-center ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
                 {feature.description}
               </p>
             </div>
