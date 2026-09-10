@@ -44,9 +44,9 @@ export default function About() {
   ]
 
   return (
-    <section id="about" ref={sectionRef} style={{ padding: '120px 24px' }}>
-      <div className="w-full max-w-6xl mx-auto text-center">
-        <h2 className={`about-animate text-3xl sm:text-4xl md:text-5xl font-bold mb-8 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+    <section id="about" ref={sectionRef} className="py-28 sm:py-32">
+      <div className="max-w-6xl mx-auto px-6 text-center">
+        <h2 className={`about-animate text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
           Sobre{' '}
           <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">Mí</span>
         </h2>

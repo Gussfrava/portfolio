@@ -11,8 +11,8 @@ export default function Footer() {
   ]
 
   return (
-    <footer className={`w-full border-t ${theme === 'dark' ? 'border-slate-800/50' : 'border-gray-100'}`} style={{ padding: '48px 24px' }}>
-      <div className="w-full max-w-6xl mx-auto flex flex-col items-center gap-8">
+    <footer className={`py-12 border-t ${theme === 'dark' ? 'border-slate-800/50' : 'border-gray-100'}`}>
+      <div className="max-w-6xl mx-auto px-6 flex flex-col items-center gap-8">
         <a href="#hero" className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
           Portfolio
         </a>
