@@ -47,7 +47,7 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4 sm:px-6"
+      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6 sm:px-8 lg:px-12"
     >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -60,10 +60,10 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
+      <div className="relative z-10 text-center w-full max-w-4xl mx-auto px-4">
         <p
           ref={subtitleRef}
-          className={`text-xs sm:text-sm md:text-base font-medium tracking-widest uppercase mb-4 sm:mb-6 ${
+          className={`text-xs sm:text-sm md:text-base font-medium tracking-widest uppercase mb-6 sm:mb-8 ${
             theme === 'dark' ? 'text-emerald-400' : 'text-emerald-600'
           }`}
         >
@@ -85,7 +85,7 @@ export default function Hero() {
 
         <p
           ref={descRef}
-          className={`text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-4 ${
+          className={`text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed ${
             theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
           }`}
         >
@@ -94,19 +94,19 @@ export default function Hero() {
           veniam, quis nostrud exercitation ullamco laboris.
         </p>
 
-        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
+        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
           <a
             href="#projects"
-            className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5 text-sm sm:text-base"
+            className="w-full sm:w-auto px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5 text-base"
           >
             Ver Proyectos
           </a>
           <a
             href="#contact"
-            className={`px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 text-sm sm:text-base ${
+            className={`w-full sm:w-auto px-10 py-4 rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 text-base ${
               theme === 'dark'
-                ? 'text-gray-300 border border-gray-700 hover:border-emerald-500 hover:text-emerald-400'
-                : 'text-gray-700 border border-gray-300 hover:border-emerald-500 hover:text-emerald-600'
+                ? 'text-gray-300 border-2 border-gray-700 hover:border-emerald-500 hover:text-emerald-400'
+                : 'text-gray-700 border-2 border-gray-300 hover:border-emerald-500 hover:text-emerald-600'
             }`}
           >
             Contactame
@@ -117,9 +117,9 @@ export default function Hero() {
       <a
         href="#about"
         ref={floatingRef}
-        className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2"
       >
-        <ArrowDown className={`w-5 h-5 sm:w-6 sm:h-6 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
+        <ArrowDown className={`w-6 h-6 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
       </a>
     </section>
   )

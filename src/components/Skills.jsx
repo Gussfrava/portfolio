@@ -46,42 +46,44 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      className="py-24 sm:py-28 lg:py-32 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto"
     >
-      <h2
-        className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6 ${
-          theme === 'dark' ? 'text-white' : 'text-gray-900'
-        }`}
-      >
-        Mis{' '}
-        <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
-          Skills
-        </span>
-      </h2>
+      <div className="text-center mb-16 sm:mb-20">
+        <h2
+          className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}
+        >
+          Mis{' '}
+          <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+            Skills
+          </span>
+        </h2>
 
-      <p
-        className={`text-center max-w-2xl mx-auto mb-12 sm:mb-16 leading-relaxed text-sm sm:text-base ${
-          theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-        }`}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+        <p
+          className={`max-w-2xl mx-auto leading-relaxed text-base sm:text-lg ${
+            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+          }`}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
-        <div className="space-y-5 sm:space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+        <div className="space-y-6">
           {skills.map((skill, i) => (
             <div key={skill.name}>
-              <div className="flex justify-between mb-2">
+              <div className="flex justify-between mb-3">
                 <span
-                  className={`text-sm font-medium ${
+                  className={`text-sm sm:text-base font-medium ${
                     theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
                   }`}
                 >
                   {skill.name}
                 </span>
                 <span
-                  className={`text-xs sm:text-sm ${
+                  className={`text-sm ${
                     theme === 'dark' ? 'text-gray-500' : 'text-gray-400'
                   }`}
                 >
@@ -89,7 +91,7 @@ export default function Skills() {
                 </span>
               </div>
               <div
-                className={`h-2 sm:h-2.5 rounded-full overflow-hidden ${
+                className={`h-3 rounded-full overflow-hidden ${
                   theme === 'dark' ? 'bg-slate-800' : 'bg-gray-100'
                 }`}
               >
@@ -108,17 +110,17 @@ export default function Skills() {
 
         <div>
           <h3
-            className={`text-lg sm:text-xl font-semibold mb-6 ${
+            className={`text-xl sm:text-2xl font-semibold mb-8 ${
               theme === 'dark' ? 'text-white' : 'text-gray-900'
             }`}
           >
             Herramientas y Tech
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {tools.map(tool => (
               <div
                 key={tool}
-                className={`p-3 sm:p-4 rounded-xl text-center text-xs sm:text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
+                className={`p-4 rounded-xl text-center text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
                   theme === 'dark'
                     ? 'bg-slate-900/50 border border-slate-800 text-gray-300 hover:border-emerald-500/30'
                     : 'bg-white border border-gray-100 text-gray-700 hover:border-emerald-400 shadow-sm'

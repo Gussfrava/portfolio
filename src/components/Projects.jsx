@@ -26,7 +26,7 @@ export default function Projects() {
       })
     })
 
-    cardsRef.current.forEach((card, i) => {
+    cardsRef.current.forEach((card) => {
       card.addEventListener('mouseenter', () => {
         gsap.to(card, {
           y: -8,
@@ -79,7 +79,7 @@ export default function Projects() {
     },
     {
       title: 'Crypto Wallet',
-      description: 'Billetera de criptomomonedas con gráficos en tiempo real y portfolio tracking.',
+      description: 'Billetera de criptomonedas con gráficos en tiempo real y portfolio tracking.',
       tags: ['Vue.js', 'Web3.js', 'Solidity'],
       color: 'from-teal-600 to-emerald-500',
     },
@@ -107,29 +107,31 @@ export default function Projects() {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
+      className="py-24 sm:py-28 lg:py-32 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto"
     >
-      <h2
-        className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6 ${
-          theme === 'dark' ? 'text-white' : 'text-gray-900'
-        }`}
-      >
-        Mis{' '}
-        <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
-          Proyectos
-        </span>
-      </h2>
+      <div className="text-center mb-16 sm:mb-20">
+        <h2
+          className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ${
+            theme === 'dark' ? 'text-white' : 'text-gray-900'
+          }`}
+        >
+          Mis{' '}
+          <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+            Proyectos
+          </span>
+        </h2>
 
-      <p
-        className={`text-center max-w-2xl mx-auto mb-12 sm:mb-16 leading-relaxed text-sm sm:text-base ${
-          theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-        }`}
-      >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+        <p
+          className={`max-w-2xl mx-auto leading-relaxed text-base sm:text-lg ${
+            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+          }`}
+        >
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
         {projects.map((project, i) => (
           <div
             key={i}
@@ -140,38 +142,38 @@ export default function Projects() {
                 : 'bg-white border border-gray-100 shadow-sm hover:border-emerald-400'
             }`}
           >
-            <div className={`h-40 sm:h-44 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+            <div className={`h-48 sm:h-52 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
               <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white/90 text-4xl sm:text-5xl font-bold opacity-20">
+                <span className="text-white/90 text-5xl sm:text-6xl font-bold opacity-20">
                   {String(i + 1).padStart(2, '0')}
                 </span>
               </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4 gap-3">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5 gap-4">
                 <a
                   href="#"
-                  className="p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+                  className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
                 >
-                  <Code className="w-4 h-4 text-white" />
+                  <Code className="w-5 h-5 text-white" />
                 </a>
                 <a
                   href="#"
-                  className="p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
+                  className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
                 >
-                  <ExternalLink className="w-4 h-4 text-white" />
+                  <ExternalLink className="w-5 h-5 text-white" />
                 </a>
               </div>
             </div>
 
-            <div className="p-5 sm:p-6">
+            <div className="p-6 sm:p-7">
               <h3
-                className={`text-base sm:text-lg font-semibold mb-2 ${
+                className={`text-lg sm:text-xl font-semibold mb-3 ${
                   theme === 'dark' ? 'text-white' : 'text-gray-900'
                 }`}
               >
                 {project.title}
               </h3>
               <p
-                className={`text-xs sm:text-sm mb-4 leading-relaxed ${
+                className={`text-sm sm:text-base mb-5 leading-relaxed ${
                   theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
                 }`}
               >
@@ -181,7 +183,7 @@ export default function Projects() {
                 {project.tags.map(tag => (
                   <span
                     key={tag}
-                    className={`text-[10px] sm:text-xs px-2.5 py-1 rounded-full ${
+                    className={`text-xs px-3 py-1.5 rounded-full font-medium ${
                       theme === 'dark'
                         ? 'bg-emerald-500/10 text-emerald-400'
                         : 'bg-emerald-50 text-emerald-600'
