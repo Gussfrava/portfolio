@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { useTheme } from '../context/ThemeContext'
-import { ExternalLink, Github } from 'lucide-react'
+import { ExternalLink, Code } from 'lucide-react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
@@ -96,7 +96,7 @@ export default function Projects() {
                   href="#"
                   className="p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
                 >
-                  <Github className="w-5 h-5 text-white" />
+                  <Code className="w-5 h-5 text-white" />
                 </a>
                 <a
                   href="#"

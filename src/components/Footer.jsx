@@ -1,13 +1,13 @@
 import { useTheme } from '../context/ThemeContext'
-import { Github, Linkedin, Twitter } from 'lucide-react'
+import { Code, Globe, MessageCircle } from 'lucide-react'
 
 export default function Footer() {
   const { theme } = useTheme()
 
   const socials = [
-    { icon: <Github className="w-5 h-5" />, href: '#', label: 'GitHub' },
-    { icon: <Linkedin className="w-5 h-5" />, href: '#', label: 'LinkedIn' },
-    { icon: <Twitter className="w-5 h-5" />, href: '#', label: 'Twitter' },
+    { icon: <Code className="w-5 h-5" />, href: '#', label: 'GitHub' },
+    { icon: <Globe className="w-5 h-5" />, href: '#', label: 'LinkedIn' },
+    { icon: <MessageCircle className="w-5 h-5" />, href: '#', label: 'Twitter' },
   ]
 
   return (
