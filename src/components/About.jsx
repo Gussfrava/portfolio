@@ -92,13 +92,13 @@ export default function About() {
             <div
               key={i}
               ref={el => cardsRef.current[i] = el}
-              className={`p-8 sm:p-10 rounded-2xl transition-all duration-300 hover:-translate-y-1 ${
+              className={`p-8 sm:p-10 rounded-2xl text-center transition-all duration-300 hover:-translate-y-1 ${
                 theme === 'dark'
                   ? 'bg-slate-900/50 border border-slate-800 hover:border-emerald-500/30'
                   : 'bg-white border border-gray-100 shadow-sm hover:border-emerald-400'
               }`}
             >
-              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center text-white mb-6">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center text-white mb-6 mx-auto">
                 {feature.icon}
               </div>
               <h3

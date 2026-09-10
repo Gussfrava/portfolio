@@ -137,7 +137,7 @@ export default function Projects() {
             <div
               key={i}
               ref={el => cardsRef.current[i] = el}
-              className={`group rounded-2xl overflow-hidden transition-all duration-300 ${
+              className={`group rounded-2xl overflow-hidden text-center transition-all duration-300 ${
                 theme === 'dark'
                   ? 'bg-slate-900/50 border border-slate-800 hover:border-emerald-500/30'
                   : 'bg-white border border-gray-100 shadow-sm hover:border-emerald-400'
@@ -159,7 +159,7 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="p-6 sm:p-7">
+              <div className="p-6 sm:p-8">
                 <h3
                   className={`text-lg sm:text-xl font-semibold mb-3 ${
                     theme === 'dark' ? 'text-white' : 'text-gray-900'
@@ -174,7 +174,7 @@ export default function Projects() {
                 >
                   {project.description}
                 </p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 justify-center">
                   {project.tags.map(tag => (
                     <span
                       key={tag}

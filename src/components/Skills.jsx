@@ -121,7 +121,7 @@ export default function Skills() {
             ))}
           </div>
 
-          <div>
+          <div className="text-center lg:text-left">
             <h3
               className={`skills-animate text-xl sm:text-2xl font-semibold mb-8 ${
                 theme === 'dark' ? 'text-white' : 'text-gray-900'
