@@ -11,6 +11,17 @@ export default function Skills() {
   const barsRef = useRef([])
 
   useEffect(() => {
+    gsap.from(sectionRef.current.querySelectorAll('.skills-animate'), {
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+    })
+
     barsRef.current.forEach((bar, i) => {
       gsap.from(bar, {
         scrollTrigger: {
@@ -46,89 +57,92 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-24 sm:py-28 lg:py-32 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto"
+      className="py-24 sm:py-28 lg:py-32"
+      style={{ padding: '100px 24px' }}
     >
-      <div className="text-center mb-16 sm:mb-20">
-        <h2
-          className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}
-        >
-          Mis{' '}
-          <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
-            Skills
-          </span>
-        </h2>
-
-        <p
-          className={`max-w-2xl mx-auto leading-relaxed text-base sm:text-lg ${
-            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-          }`}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
-        <div className="space-y-6">
-          {skills.map((skill, i) => (
-            <div key={skill.name}>
-              <div className="flex justify-between mb-3">
-                <span
-                  className={`text-sm sm:text-base font-medium ${
-                    theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
-                  }`}
-                >
-                  {skill.name}
-                </span>
-                <span
-                  className={`text-sm ${
-                    theme === 'dark' ? 'text-gray-500' : 'text-gray-400'
-                  }`}
-                >
-                  {skill.level}%
-                </span>
-              </div>
-              <div
-                className={`h-3 rounded-full overflow-hidden ${
-                  theme === 'dark' ? 'bg-slate-800' : 'bg-gray-100'
-                }`}
-              >
-                <div
-                  ref={el => barsRef.current[i] = el}
-                  className="h-full rounded-full"
-                  style={{
-                    width: `${skill.level}%`,
-                    background: `linear-gradient(90deg, ${skill.color}, ${skill.color}aa)`,
-                  }}
-                />
-              </div>
-            </div>
-          ))}
-        </div>
-
-        <div>
-          <h3
-            className={`text-xl sm:text-2xl font-semibold mb-8 ${
+      <div className="w-full max-w-6xl mx-auto">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2
+            className={`skills-animate text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ${
               theme === 'dark' ? 'text-white' : 'text-gray-900'
             }`}
           >
-            Herramientas y Tech
-          </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-            {tools.map(tool => (
-              <div
-                key={tool}
-                className={`p-4 rounded-xl text-center text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
-                  theme === 'dark'
-                    ? 'bg-slate-900/50 border border-slate-800 text-gray-300 hover:border-emerald-500/30'
-                    : 'bg-white border border-gray-100 text-gray-700 hover:border-emerald-400 shadow-sm'
-                }`}
-              >
-                {tool}
+            Mis{' '}
+            <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+              Skills
+            </span>
+          </h2>
+
+          <p
+            className={`skills-animate max-w-2xl mx-auto leading-relaxed text-base sm:text-lg ${
+              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+            }`}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+          <div className="space-y-6">
+            {skills.map((skill, i) => (
+              <div key={skill.name}>
+                <div className="flex justify-between mb-3">
+                  <span
+                    className={`text-sm sm:text-base font-medium ${
+                      theme === 'dark' ? 'text-gray-300' : 'text-gray-700'
+                    }`}
+                  >
+                    {skill.name}
+                  </span>
+                  <span
+                    className={`text-sm ${
+                      theme === 'dark' ? 'text-gray-500' : 'text-gray-400'
+                    }`}
+                  >
+                    {skill.level}%
+                  </span>
+                </div>
+                <div
+                  className={`h-3 rounded-full overflow-hidden ${
+                    theme === 'dark' ? 'bg-slate-800' : 'bg-gray-100'
+                  }`}
+                >
+                  <div
+                    ref={el => barsRef.current[i] = el}
+                    className="h-full rounded-full"
+                    style={{
+                      width: `${skill.level}%`,
+                      background: `linear-gradient(90deg, ${skill.color}, ${skill.color}aa)`,
+                    }}
+                  />
+                </div>
               </div>
             ))}
+          </div>
+
+          <div>
+            <h3
+              className={`skills-animate text-xl sm:text-2xl font-semibold mb-8 ${
+                theme === 'dark' ? 'text-white' : 'text-gray-900'
+              }`}
+            >
+              Herramientas y Tech
+            </h3>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+              {tools.map(tool => (
+                <div
+                  key={tool}
+                  className={`p-4 rounded-xl text-center text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
+                    theme === 'dark'
+                      ? 'bg-slate-900/50 border border-slate-800 text-gray-300 hover:border-emerald-500/30'
+                      : 'bg-white border border-gray-100 text-gray-700 hover:border-emerald-400 shadow-sm'
+                  }`}
+                >
+                  {tool}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

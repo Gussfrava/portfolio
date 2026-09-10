@@ -12,6 +12,17 @@ export default function Projects() {
   const cardsRef = useRef([])
 
   useEffect(() => {
+    gsap.from(sectionRef.current.querySelectorAll('.projects-animate'), {
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 80%',
+      },
+      y: 50,
+      opacity: 0,
+      duration: 0.8,
+      stagger: 0.2,
+    })
+
     cardsRef.current.forEach((card, i) => {
       gsap.from(card, {
         scrollTrigger: {
@@ -24,24 +35,12 @@ export default function Projects() {
         delay: (i % 3) * 0.15,
         ease: 'power2.out',
       })
-    })
 
-    cardsRef.current.forEach((card) => {
       card.addEventListener('mouseenter', () => {
-        gsap.to(card, {
-          y: -8,
-          scale: 1.02,
-          duration: 0.3,
-          ease: 'power2.out',
-        })
+        gsap.to(card, { y: -8, scale: 1.02, duration: 0.3, ease: 'power2.out' })
       })
       card.addEventListener('mouseleave', () => {
-        gsap.to(card, {
-          y: 0,
-          scale: 1,
-          duration: 0.3,
-          ease: 'power2.out',
-        })
+        gsap.to(card, { y: 0, scale: 1, duration: 0.3, ease: 'power2.out' })
       })
     })
   }, [])
@@ -107,95 +106,92 @@ export default function Projects() {
     <section
       id="projects"
       ref={sectionRef}
-      className="py-24 sm:py-28 lg:py-32 px-6 sm:px-8 lg:px-12 max-w-7xl mx-auto"
+      className="py-24 sm:py-28 lg:py-32"
+      style={{ padding: '100px 24px' }}
     >
-      <div className="text-center mb-16 sm:mb-20">
-        <h2
-          className={`text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}
-        >
-          Mis{' '}
-          <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
-            Proyectos
-          </span>
-        </h2>
-
-        <p
-          className={`max-w-2xl mx-auto leading-relaxed text-base sm:text-lg ${
-            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-          }`}
-        >
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {projects.map((project, i) => (
-          <div
-            key={i}
-            ref={el => cardsRef.current[i] = el}
-            className={`group rounded-2xl overflow-hidden transition-all duration-300 ${
-              theme === 'dark'
-                ? 'bg-slate-900/50 border border-slate-800 hover:border-emerald-500/30'
-                : 'bg-white border border-gray-100 shadow-sm hover:border-emerald-400'
+      <div className="w-full max-w-6xl mx-auto">
+        <div className="text-center mb-16 sm:mb-20">
+          <h2
+            className={`projects-animate text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ${
+              theme === 'dark' ? 'text-white' : 'text-gray-900'
             }`}
           >
-            <div className={`h-48 sm:h-52 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <span className="text-white/90 text-5xl sm:text-6xl font-bold opacity-20">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-              </div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5 gap-4">
-                <a
-                  href="#"
-                  className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
-                >
-                  <Code className="w-5 h-5 text-white" />
-                </a>
-                <a
-                  href="#"
-                  className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors"
-                >
-                  <ExternalLink className="w-5 h-5 text-white" />
-                </a>
-              </div>
-            </div>
+            Mis{' '}
+            <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
+              Proyectos
+            </span>
+          </h2>
 
-            <div className="p-6 sm:p-7">
-              <h3
-                className={`text-lg sm:text-xl font-semibold mb-3 ${
-                  theme === 'dark' ? 'text-white' : 'text-gray-900'
-                }`}
-              >
-                {project.title}
-              </h3>
-              <p
-                className={`text-sm sm:text-base mb-5 leading-relaxed ${
-                  theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-                }`}
-              >
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map(tag => (
-                  <span
-                    key={tag}
-                    className={`text-xs px-3 py-1.5 rounded-full font-medium ${
-                      theme === 'dark'
-                        ? 'bg-emerald-500/10 text-emerald-400'
-                        : 'bg-emerald-50 text-emerald-600'
-                    }`}
-                  >
-                    {tag}
+          <p
+            className={`projects-animate max-w-2xl mx-auto leading-relaxed text-base sm:text-lg ${
+              theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+            }`}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {projects.map((project, i) => (
+            <div
+              key={i}
+              ref={el => cardsRef.current[i] = el}
+              className={`group rounded-2xl overflow-hidden transition-all duration-300 ${
+                theme === 'dark'
+                  ? 'bg-slate-900/50 border border-slate-800 hover:border-emerald-500/30'
+                  : 'bg-white border border-gray-100 shadow-sm hover:border-emerald-400'
+              }`}
+            >
+              <div className={`h-48 sm:h-52 bg-gradient-to-br ${project.color} relative overflow-hidden`}>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-white/90 text-5xl sm:text-6xl font-bold opacity-20">
+                    {String(i + 1).padStart(2, '0')}
                   </span>
-                ))}
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-5 gap-4">
+                  <a href="#" className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors">
+                    <Code className="w-5 h-5 text-white" />
+                  </a>
+                  <a href="#" className="p-3 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-colors">
+                    <ExternalLink className="w-5 h-5 text-white" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="p-6 sm:p-7">
+                <h3
+                  className={`text-lg sm:text-xl font-semibold mb-3 ${
+                    theme === 'dark' ? 'text-white' : 'text-gray-900'
+                  }`}
+                >
+                  {project.title}
+                </h3>
+                <p
+                  className={`text-sm sm:text-base mb-5 leading-relaxed ${
+                    theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
+                  }`}
+                >
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map(tag => (
+                    <span
+                      key={tag}
+                      className={`text-xs px-3 py-1.5 rounded-full font-medium ${
+                        theme === 'dark'
+                          ? 'bg-emerald-500/10 text-emerald-400'
+                          : 'bg-emerald-50 text-emerald-600'
+                      }`}
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
   )
