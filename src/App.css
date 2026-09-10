@@ -433,18 +433,34 @@ body.light .btn--secondary:hover {
   width: 100%;
 }
 
-/* About Cards */
-.about__cards {
+/* About Bento Grid */
+.about__bento {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 24px;
 }
 
 .about__card {
   padding: 40px 32px;
-  text-align: center;
-  border-radius: 20px;
-  transition: all 0.3s ease;
+  text-align: left;
+  border-radius: 24px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.about__card--large {
+  grid-row: span 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about__card--small {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 body.dark .about__card {
@@ -983,6 +999,14 @@ body.light .footer__copyright {
 
   .projects__grid {
     grid-template-columns: 1fr;
+  }
+
+  .about__bento {
+    grid-template-columns: 1fr;
+  }
+
+  .about__card--large {
+    grid-row: span 1;
   }
 
   .skills__grid {

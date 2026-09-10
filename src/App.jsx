@@ -241,16 +241,19 @@ function About() {
       icon: '</>',
       title: 'Desarrollo Web',
       text: 'HTML5, CSS3, JavaScript, jQuery, PHP, Bootstrap, WordPress, Elementor y React. Creación de sitios web responsivos y optimizados.',
+      size: 'large',
     },
     {
       icon: '📈',
       title: 'SEO & WPO',
       text: 'SEO on-page y técnico, keyword research con Semrush, optimización de Core Web Vitals. Velocidad de carga de 60% a 95% en PageSpeed.',
+      size: 'small',
     },
     {
       icon: '🎨',
       title: 'Diseño Web',
       text: 'Diseño de interfaces y prototipos en Figma. Maquetación a partir de diseños UI/UX para sitios web y landing pages.',
+      size: 'small',
     },
   ]
 
@@ -264,12 +267,12 @@ function About() {
           Historial comprobado de mejorar la velocidad de carga, el tráfico orgánico
           y las conversiones mediante diseño web, estrategia SEO y campañas en Google Ads.
         </p>
-        <div className="about__cards">
+        <div className="about__bento">
           {features.map((feature, i) => (
             <div
               key={i}
               ref={el => cardsRef.current[i] = el}
-              className="about__card"
+              className={`about__card about__card--${feature.size}`}
             >
               <div className="about__card-icon">{feature.icon}</div>
               <h3 className="about__card-title">{feature.title}</h3>
