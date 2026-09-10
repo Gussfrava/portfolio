@@ -559,6 +559,11 @@ function App() {
   return (
     <ThemeProvider>
       <div className="app">
+        <div className="gradient-mesh">
+          <div className="gradient-mesh__orb gradient-mesh__orb--1"></div>
+          <div className="gradient-mesh__orb gradient-mesh__orb--2"></div>
+          <div className="gradient-mesh__orb gradient-mesh__orb--3"></div>
+        </div>
         <CustomCursor />
         <Navbar />
         <main>
