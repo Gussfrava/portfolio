@@ -28,7 +28,7 @@ function Navbar() {
   return (
     <header className={`header ${scrolled ? 'header--scrolled' : ''}`}>
       <nav className="navbar">
-        <a href="#hero" className="navbar__logo">MiPortfolio</a>
+        <a href="#hero" className="navbar__logo">Jhonatan.dev</a>
 
         <ul className={`navbar__links ${mobileOpen ? 'navbar__links--open' : ''}`}>
           {links.map(link => (
@@ -91,14 +91,15 @@ function Hero() {
   return (
     <section id="hero" className="section hero">
       <div className="hero__content">
-        <p className="hero__subtitle">Desarrollador Full Stack</p>
+        <p className="hero__subtitle">Ingeniero en Sistemas Computacionales</p>
         <h1 className="hero__title">
           <span className="hero__title-greeting">Hola, soy</span>
-          <span className="hero__title-name">Tu Nombre</span>
+          <span className="hero__title-name">Jhonatan Gustavo</span>
         </h1>
         <p className="hero__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          +3 años de experiencia en desarrollo web, SEO on-page/técnico y
+          optimización de rendimiento (WPO). Mejorando velocidad de carga,
+          tráfico orgánico y conversiones.
         </p>
         <div className="hero__cta">
           <a href="#projects" className="btn btn--primary">Ver Proyectos</a>
@@ -136,9 +137,21 @@ function About() {
   }, [])
 
   const features = [
-    { icon: '</>', title: 'Desarrollo Web', text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.' },
-    { icon: '🎨', title: 'UI/UX Design', text: 'Ut enim ad minim veniam, quis nostrud exercitation.' },
-    { icon: '⚡', title: 'Rendimiento', text: 'Duis aute irure dolor in reprehenderit in voluptate.' },
+    {
+      icon: '</>',
+      title: 'Desarrollo Web',
+      text: 'HTML5, CSS3, JavaScript, jQuery, PHP, Bootstrap, WordPress, Elementor y React. Creación de sitios web responsivos y optimizados.',
+    },
+    {
+      icon: '📈',
+      title: 'SEO & WPO',
+      text: 'SEO on-page y técnico, keyword research con Semrush, optimización de Core Web Vitals. Velocidad de carga de 60% a 95% en PageSpeed.',
+    },
+    {
+      icon: '🎨',
+      title: 'Diseño Web',
+      text: 'Diseño de interfaces y prototipos en Figma. Maquetación a partir de diseños UI/UX para sitios web y landing pages.',
+    },
   ]
 
   return (
@@ -146,8 +159,10 @@ function About() {
       <div className="section__container">
         <h2 className="section__title about-title">Sobre <span className="section__title-highlight">Mí</span></h2>
         <p className="section__description about-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          Ingeniero en Sistemas Computacionales con +3 años de experiencia en
+          desarrollo web, SEO on-page/técnico y optimización de rendimiento (WPO).
+          Historial comprobado de mejorar la velocidad de carga, el tráfico orgánico
+          y las conversiones mediante diseño web, estrategia SEO y campañas en Google Ads.
         </p>
         <div className="about__cards">
           {features.map((feature, i) => (
@@ -193,15 +208,42 @@ function Projects() {
   }, [])
 
   const projects = [
-    { title: 'E-Commerce Platform', desc: 'Plataforma de comercio electrónico con carrito de compras.', tags: ['React', 'Node.js', 'MongoDB'], color: 'linear-gradient(135deg, #10b981, #06b6d4)' },
-    { title: 'Task Management App', desc: 'Aplicación de gestión de tareas con drag and drop.', tags: ['Next.js', 'TypeScript', 'PostgreSQL'], color: 'linear-gradient(135deg, #06b6d4, #3b82f6)' },
-    { title: 'AI Dashboard', desc: 'Dashboard con inteligencia artificial para análisis de datos.', tags: ['Python', 'TensorFlow', 'React'], color: 'linear-gradient(135deg, #3b82f6, #8b5cf6)' },
-    { title: 'Social Media App', desc: 'Red social con chat en tiempo real y feed personalizado.', tags: ['React', 'Firebase', 'Tailwind'], color: 'linear-gradient(135deg, #10b981, #22c55e)' },
-    { title: 'Fitness Tracker', desc: 'Aplicación para seguimiento de ejercicios y nutrición.', tags: ['React Native', 'Node.js', 'Redis'], color: 'linear-gradient(135deg, #22c55e, #10b981)' },
-    { title: 'Crypto Wallet', desc: 'Billetera de criptomonedas con gráficos en tiempo real.', tags: ['Vue.js', 'Web3.js', 'Solidity'], color: 'linear-gradient(135deg, #06b6d4, #10b981)' },
-    { title: 'Booking System', desc: 'Sistema de reservas con calendario interactivo y pagos.', tags: ['Next.js', 'Prisma', 'Stripe'], color: 'linear-gradient(135deg, #10b981, #22c55e)' },
-    { title: 'Music Streaming', desc: 'Plataforma de streaming de música con playlists compartidas.', tags: ['React', 'Node.js', 'AWS S3'], color: 'linear-gradient(135deg, #3b82f6, #06b6d4)' },
-    { title: 'Real Estate Platform', desc: 'Portal inmobiliario con búsqueda avanzada y tours virtuales.', tags: ['Next.js', 'PostgreSQL', 'Mapbox'], color: 'linear-gradient(135deg, #22c55e, #10b981)' },
+    {
+      title: 'Portales Web Corporativos',
+      desc: 'Desarrollo y maquetación de portales web principales de la empresa con HTML, CSS, JavaScript y WordPress.',
+      tags: ['HTML', 'CSS', 'WordPress', 'Elementor'],
+      color: 'linear-gradient(135deg, #10b981, #06b6d4)',
+    },
+    {
+      title: 'Optimización WPO',
+      desc: 'Mejora de velocidad de carga de sitios web de 60% a 95% en PageSpeed/Lighthouse.',
+      tags: ['WPO', 'PageSpeed', 'Lighthouse'],
+      color: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+    },
+    {
+      title: 'Estrategia SEO',
+      desc: 'Implementación de SEO on-page y técnico con research de keywords en Semrush.',
+      tags: ['SEO', 'Semrush', 'Search Console'],
+      color: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+    },
+    {
+      title: 'Analítica Web GA4',
+      desc: 'Configuración de GA4, Google Tag Manager y Search Console para monitoreo de tráfico.',
+      tags: ['GA4', 'GTM', 'Analytics'],
+      color: 'linear-gradient(135deg, #10b981, #22c55e)',
+    },
+    {
+      title: 'Diseño UI/UX Figma',
+      desc: 'Diseño de interfaces y prototipos para sitios web de alianzas estratégicas.',
+      tags: ['Figma', 'UI/UX', 'Prototipado'],
+      color: 'linear-gradient(135deg, #22c55e, #10b981)',
+    },
+    {
+      title: 'Campañas Google Ads',
+      desc: 'Configuración de tracking de conversiones y monitoreo de campañas publicitarias.',
+      tags: ['Google Ads', 'Conversiones', 'Tracking'],
+      color: 'linear-gradient(135deg, #06b6d4, #10b981)',
+    },
   ]
 
   return (
@@ -209,8 +251,7 @@ function Projects() {
       <div className="section__container">
         <h2 className="section__title projects-title">Mis <span className="section__title-highlight">Proyectos</span></h2>
         <p className="section__description projects-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          Experiencia real en desarrollo web, SEO y analítica digital
         </p>
         <div className="projects__grid">
           {projects.map((project, i) => (
@@ -268,14 +309,14 @@ function Skills() {
   }, [])
 
   const skills = [
-    { name: 'React', level: 90 },
+    { name: 'HTML5 / CSS3', level: 95 },
     { name: 'JavaScript', level: 85 },
-    { name: 'TypeScript', level: 80 },
-    { name: 'Node.js', level: 75 },
-    { name: 'Python', level: 70 },
-    { name: 'Tailwind CSS', level: 95 },
-    { name: 'PostgreSQL', level: 65 },
-    { name: 'Docker', level: 60 },
+    { name: 'WordPress / Elementor', level: 90 },
+    { name: 'SEO on-page / Técnico', level: 88 },
+    { name: 'GA4 / GTM / Analytics', level: 80 },
+    { name: 'Figma (UI/UX)', level: 75 },
+    { name: 'React (en aprendizaje)', level: 50 },
+    { name: 'Google Ads', level: 70 },
   ]
 
   return (
@@ -283,12 +324,11 @@ function Skills() {
       <div className="section__container">
         <h2 className="section__title skills-title">Mis <span className="section__title-highlight">Skills</span></h2>
         <p className="section__description skills-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          Tecnologías y herramientas que domino
         </p>
         <div className="skills__grid">
           <div className="skills__card">
-            <h3 className="skills__card-title">Technical Skills</h3>
+            <h3 className="skills__card-title">Desarrollo & SEO</h3>
             <div className="skills__list">
               {skills.map((skill, i) => (
                 <div key={skill.name} className="skill">
@@ -310,7 +350,7 @@ function Skills() {
           <div className="skills__card">
             <h3 className="skills__card-title">Herramientas & Tech</h3>
             <div className="tools__grid">
-              {['Git', 'GitHub', 'VS Code', 'Figma', 'Postman', 'Linux', 'AWS', 'Vercel', 'Netlify', 'MongoDB', 'Redis', 'GraphQL'].map(tool => (
+              {['Semrush', 'Google Ads', 'Figma', 'VS Code', 'Git', 'GitHub', 'PageSpeed', 'Lighthouse', 'Search Console', 'Bootstrap', 'PHP', 'SQL'].map(tool => (
                 <div key={tool} className="tool">{tool}</div>
               ))}
             </div>
@@ -348,8 +388,7 @@ function Contact() {
       <div className="section__container section__container--small">
         <h2 className="section__title contact-title">Contact <span className="section__title-highlight">Me</span></h2>
         <p className="section__description contact-desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
+          ¿Tienes un proyecto en mente? ¡Hablemos!
         </p>
         <div className="contact__card">
           <div className="contact__info">
@@ -357,14 +396,14 @@ function Contact() {
               <span className="contact__info-icon">✉️</span>
               <div>
                 <p className="contact__info-label">Email</p>
-                <p className="contact__info-value">hello@example.com</p>
+                <p className="contact__info-value">jhonatangustavo8a@gmail.com</p>
               </div>
             </div>
             <div className="contact__info-item">
-              <span className="contact__info-icon">📍</span>
+              <span className="contact__info-icon">💼</span>
               <div>
-                <p className="contact__info-label">Ubicación</p>
-                <p className="contact__info-value">Ciudad, País</p>
+                <p className="contact__info-label">LinkedIn</p>
+                <p className="contact__info-value">linkedin.com/in/jhonatan-gustavo</p>
               </div>
             </div>
           </div>
@@ -397,13 +436,12 @@ function App() {
         </main>
         <footer className="footer">
           <div className="footer__container">
-            <a href="#hero" className="footer__logo">MiPortfolio</a>
+            <a href="#hero" className="footer__logo">Jhonatan.dev</a>
             <div className="footer__social">
-              <a href="#" className="footer__social-link" aria-label="GitHub">GH</a>
-              <a href="#" className="footer__social-link" aria-label="LinkedIn">IN</a>
-              <a href="#" className="footer__social-link" aria-label="Twitter">TW</a>
+              <a href="https://github.com/Gussfrava" className="footer__social-link" aria-label="GitHub">GH</a>
+              <a href="https://linkedin.com/in/jhonatan-gustavo" className="footer__social-link" aria-label="LinkedIn">IN</a>
             </div>
-            <p className="footer__copyright">© 2026 Portfolio</p>
+            <p className="footer__copyright">© 2026 Jhonatan Gustavo</p>
           </div>
         </footer>
       </div>
