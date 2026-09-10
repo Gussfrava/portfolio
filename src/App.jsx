@@ -111,16 +111,19 @@ function Hero() {
 }
 
 function About() {
+  const sectionRef = useRef(null)
   const cardsRef = useRef([])
 
   useEffect(() => {
-    gsap.from('.section__title', {
-      scrollTrigger: { trigger: '.about', start: 'top 80%' },
+    const section = sectionRef.current
+
+    gsap.from(section.querySelector('.about-title'), {
+      scrollTrigger: { trigger: section, start: 'top 80%' },
       y: 40, opacity: 0, duration: 0.8,
     })
 
-    gsap.from('.section__description', {
-      scrollTrigger: { trigger: '.about', start: 'top 75%' },
+    gsap.from(section.querySelector('.about-desc'), {
+      scrollTrigger: { trigger: section, start: 'top 75%' },
       y: 30, opacity: 0, duration: 0.7, delay: 0.2,
     })
 
@@ -139,10 +142,10 @@ function About() {
   ]
 
   return (
-    <section id="about" className="section about">
+    <section id="about" ref={sectionRef} className="section about">
       <div className="section__container">
-        <h2 className="section__title">Sobre <span className="section__title-highlight">Mí</span></h2>
-        <p className="section__description">
+        <h2 className="section__title about-title">Sobre <span className="section__title-highlight">Mí</span></h2>
+        <p className="section__description about-desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
         </p>
@@ -165,16 +168,19 @@ function About() {
 }
 
 function Projects() {
+  const sectionRef = useRef(null)
   const cardsRef = useRef([])
 
   useEffect(() => {
-    gsap.from('.projects .section__title', {
-      scrollTrigger: { trigger: '.projects', start: 'top 80%' },
+    const section = sectionRef.current
+
+    gsap.from(section.querySelector('.projects-title'), {
+      scrollTrigger: { trigger: section, start: 'top 80%' },
       y: 40, opacity: 0, duration: 0.8,
     })
 
-    gsap.from('.projects .section__description', {
-      scrollTrigger: { trigger: '.projects', start: 'top 75%' },
+    gsap.from(section.querySelector('.projects-desc'), {
+      scrollTrigger: { trigger: section, start: 'top 75%' },
       y: 30, opacity: 0, duration: 0.7, delay: 0.2,
     })
 
@@ -199,10 +205,10 @@ function Projects() {
   ]
 
   return (
-    <section id="projects" className="section projects">
+    <section id="projects" ref={sectionRef} className="section projects">
       <div className="section__container">
-        <h2 className="section__title">Mis <span className="section__title-highlight">Proyectos</span></h2>
-        <p className="section__description">
+        <h2 className="section__title projects-title">Mis <span className="section__title-highlight">Proyectos</span></h2>
+        <p className="section__description projects-desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
         </p>
@@ -232,21 +238,24 @@ function Projects() {
 }
 
 function Skills() {
+  const sectionRef = useRef(null)
   const barsRef = useRef([])
 
   useEffect(() => {
-    gsap.from('.skills .section__title', {
-      scrollTrigger: { trigger: '.skills', start: 'top 80%' },
+    const section = sectionRef.current
+
+    gsap.from(section.querySelector('.skills-title'), {
+      scrollTrigger: { trigger: section, start: 'top 80%' },
       y: 40, opacity: 0, duration: 0.8,
     })
 
-    gsap.from('.skills .section__description', {
-      scrollTrigger: { trigger: '.skills', start: 'top 75%' },
+    gsap.from(section.querySelector('.skills-desc'), {
+      scrollTrigger: { trigger: section, start: 'top 75%' },
       y: 30, opacity: 0, duration: 0.7, delay: 0.2,
     })
 
-    gsap.from('.skills__card', {
-      scrollTrigger: { trigger: '.skills__grid', start: 'top 85%' },
+    gsap.from(section.querySelectorAll('.skills__card'), {
+      scrollTrigger: { trigger: section.querySelector('.skills__grid'), start: 'top 85%' },
       y: 50, opacity: 0, duration: 0.8, stagger: 0.2,
     })
 
@@ -270,10 +279,10 @@ function Skills() {
   ]
 
   return (
-    <section id="skills" className="section skills">
+    <section id="skills" ref={sectionRef} className="section skills">
       <div className="section__container">
-        <h2 className="section__title">Mis <span className="section__title-highlight">Skills</span></h2>
-        <p className="section__description">
+        <h2 className="section__title skills-title">Mis <span className="section__title-highlight">Skills</span></h2>
+        <p className="section__description skills-desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
         </p>
@@ -313,28 +322,32 @@ function Skills() {
 }
 
 function Contact() {
+  const sectionRef = useRef(null)
+
   useEffect(() => {
-    gsap.from('.contact .section__title', {
-      scrollTrigger: { trigger: '.contact', start: 'top 80%' },
+    const section = sectionRef.current
+
+    gsap.from(section.querySelector('.contact-title'), {
+      scrollTrigger: { trigger: section, start: 'top 80%' },
       y: 40, opacity: 0, duration: 0.8,
     })
 
-    gsap.from('.contact .section__description', {
-      scrollTrigger: { trigger: '.contact', start: 'top 75%' },
+    gsap.from(section.querySelector('.contact-desc'), {
+      scrollTrigger: { trigger: section, start: 'top 75%' },
       y: 30, opacity: 0, duration: 0.7, delay: 0.2,
     })
 
-    gsap.from('.contact__card', {
-      scrollTrigger: { trigger: '.contact__card', start: 'top 85%' },
+    gsap.from(section.querySelector('.contact__card'), {
+      scrollTrigger: { trigger: section, start: 'top 85%' },
       y: 50, opacity: 0, duration: 0.8,
     })
   }, [])
 
   return (
-    <section id="contact" className="section contact">
+    <section id="contact" ref={sectionRef} className="section contact">
       <div className="section__container section__container--small">
-        <h2 className="section__title">Contact <span className="section__title-highlight">Me</span></h2>
-        <p className="section__description">
+        <h2 className="section__title contact-title">Contact <span className="section__title-highlight">Me</span></h2>
+        <p className="section__description contact-desc">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
           tempor incididunt ut labore et dolore magna aliqua.
         </p>
