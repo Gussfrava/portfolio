@@ -209,40 +209,46 @@ function Projects() {
 
   const projects = [
     {
-      title: 'Portales Web Corporativos',
-      desc: 'Desarrollo y maquetación de portales web principales de la empresa con HTML, CSS, JavaScript y WordPress.',
-      tags: ['HTML', 'CSS', 'WordPress', 'Elementor'],
+      title: 'Seguauto',
+      desc: 'Rediseño UI/UX y maquetación del portal principal. Landing pages optimizadas para SEO y estructura de blog con estrategia de posicionamiento orgánico.',
+      tags: ['Figma', 'HTML5', 'CSS3', 'WordPress', 'SEO'],
       color: 'linear-gradient(135deg, #10b981, #06b6d4)',
+      url: 'https://seguauto.com.mx/',
     },
     {
-      title: 'Optimización WPO',
-      desc: 'Mejora de velocidad de carga de sitios web de 60% a 95% en PageSpeed/Lighthouse.',
-      tags: ['WPO', 'PageSpeed', 'Lighthouse'],
+      title: 'Fundación Azteca',
+      desc: 'Maquetación y prototipado en Figma. Sitio desde cero con HTML5 semántico, CSS3, JavaScript y jQuery con animaciones y transiciones fluidas.',
+      tags: ['Figma', 'HTML5', 'CSS3', 'JavaScript', 'jQuery'],
       color: 'linear-gradient(135deg, #06b6d4, #3b82f6)',
+      url: 'https://www.fundacionazteca.org/',
     },
     {
-      title: 'Estrategia SEO',
-      desc: 'Implementación de SEO on-page y técnico con research de keywords en Semrush.',
-      tags: ['SEO', 'Semrush', 'Search Console'],
+      title: 'Aprendamos Juntos',
+      desc: 'Plataforma educativa de Fundación Azteca. Diseño y desarrollo de interfaz interactiva para contenido de aprendizaje.',
+      tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive'],
       color: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
+      url: 'https://www.fundacionazteca.org/aprendamos-juntos/',
     },
     {
-      title: 'Analítica Web GA4',
-      desc: 'Configuración de GA4, Google Tag Manager y Search Console para monitoreo de tráfico.',
-      tags: ['GA4', 'GTM', 'Analytics'],
+      title: 'Jamat',
+      desc: 'Desarrollo web completo con diseño responsivo, optimizado para conversión y experiencia de usuario.',
+      tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive'],
       color: 'linear-gradient(135deg, #10b981, #22c55e)',
+      url: 'https://jamat.com.mx/',
     },
     {
-      title: 'Diseño UI/UX Figma',
-      desc: 'Diseño de interfaces y prototipos para sitios web de alianzas estratégicas.',
-      tags: ['Figma', 'UI/UX', 'Prototipado'],
+      title: 'Jurídico Millán',
+      desc: 'Sitio web corporativo para despacho jurídico. Diseño profesional y elegante con estructura optimizada para SEO.',
+      tags: ['HTML5', 'CSS3', 'WordPress', 'SEO'],
       color: 'linear-gradient(135deg, #22c55e, #10b981)',
+      url: 'https://juridicomillan.com/',
     },
     {
-      title: 'Campañas Google Ads',
-      desc: 'Configuración de tracking de conversiones y monitoreo de campañas publicitarias.',
-      tags: ['Google Ads', 'Conversiones', 'Tracking'],
+      title: 'Marketing Digital México',
+      desc: 'Portal de marketing digital con diseño moderno, secciones de servicios y blog para estrategia de contenido.',
+      tags: ['HTML5', 'CSS3', 'JavaScript', 'WordPress'],
       color: 'linear-gradient(135deg, #06b6d4, #10b981)',
+      url: 'https://marketingdigitalmexico.com/',
     },
   ]
 
@@ -255,8 +261,11 @@ function Projects() {
         </p>
         <div className="projects__grid">
           {projects.map((project, i) => (
-            <article
+            <a
               key={i}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
               ref={el => cardsRef.current[i] = el}
               className="project-card"
             >
@@ -269,8 +278,9 @@ function Projects() {
                     <span key={tag} className="tag">{tag}</span>
                   ))}
                 </div>
+                <span className="project-card__link">Ver sitio →</span>
               </div>
-            </article>
+            </a>
           ))}
         </div>
       </div>
