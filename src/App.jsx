@@ -522,24 +522,24 @@ function Contact() {
           ¿Tienes un proyecto en mente? ¡Hablemos!
         </p>
         <div className="contact__card">
-          <div className="contact__info">
-            <div className="contact__info-item">
-              <span className="contact__info-icon">✉️</span>
-              <div>
-                <p className="contact__info-label">Email</p>
-                <p className="contact__info-value">jhonatangustavo8a@gmail.com</p>
-              </div>
-            </div>
+          <div className="contact__buttons">
+            <a
+              href="mailto:jhonatangustavo8a@gmail.com"
+              className="contact__btn contact__btn--email"
+            >
+              <span className="contact__btn-icon">✉️</span>
+              <span className="contact__btn-text">Enviar Email</span>
+            </a>
+            <a
+              href="https://wa.me/52XXXXXXXXXX?text=Hola%20Jhonatan%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20contigo."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="contact__btn contact__btn--whatsapp"
+            >
+              <span className="contact__btn-icon">💬</span>
+              <span className="contact__btn-text">WhatsApp</span>
+            </a>
           </div>
-          <form className="contact__form">
-            <div className="contact__form-row">
-              <input type="text" placeholder="Tu nombre" className="contact__input" />
-              <input type="email" placeholder="Tu email" className="contact__input" />
-            </div>
-            <input type="text" placeholder="Asunto" className="contact__input" />
-            <textarea rows="5" placeholder="Tu mensaje..." className="contact__textarea"></textarea>
-            <button type="submit" className="btn btn--primary btn--full">Enviar Mensaje</button>
-          </form>
         </div>
       </div>
     </section>
