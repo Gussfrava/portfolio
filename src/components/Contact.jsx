@@ -30,9 +30,9 @@ export default function Contact() {
     : 'bg-white/60 border border-gray-200/50 backdrop-blur-xl shadow-lg'
 
   return (
-    <section id="contact" ref={sectionRef} className="py-28 sm:py-32">
-      <div className="max-w-2xl mx-auto px-6 text-center">
-        <h2 className={`contact-animate text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+    <section id="contact" ref={sectionRef} style={{ padding: '120px 24px' }}>
+      <div className="w-full max-w-2xl mx-auto text-center">
+        <h2 className={`contact-animate text-3xl sm:text-4xl md:text-5xl font-bold mb-8 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
           Contact{' '}
           <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">Me</span>
         </h2>
@@ -65,7 +65,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
+          <form onSubmit={handleSubmit} className="space-y-5 text-left">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <input type="text" placeholder="Tu nombre" className={inputClasses} />
               <input type="email" placeholder="Tu email" className={inputClasses} />

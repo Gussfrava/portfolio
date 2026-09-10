@@ -5,6 +5,7 @@ import gsap from 'gsap'
 
 export default function Hero() {
   const { theme } = useTheme()
+  const containerRef = useRef(null)
 
   useEffect(() => {
     const tl = gsap.timeline({ defaults: { ease: 'power3.out' } })
@@ -24,7 +25,12 @@ export default function Hero() {
   }, [])
 
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section
+      id="hero"
+      ref={containerRef}
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
+      style={{ padding: '120px 24px 80px' }}
+    >
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
           className="absolute top-1/4 left-1/4 w-64 h-64 sm:w-96 sm:h-96 rounded-full blur-3xl opacity-15"
@@ -36,16 +42,16 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center">
+      <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
         <p
-          className={`hero-subtitle text-xs sm:text-sm md:text-base font-medium tracking-widest uppercase mb-8 ${
+          className={`hero-subtitle text-xs sm:text-sm md:text-base font-medium tracking-widest uppercase mb-6 ${
             theme === 'dark' ? 'text-emerald-400' : 'text-emerald-600'
           }`}
         >
           Desarrollador Full Stack
         </p>
 
-        <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-8">
+        <h1 className="hero-title text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6 sm:mb-8">
           <span className="bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
             Hola, soy
           </span>
@@ -56,7 +62,7 @@ export default function Hero() {
         </h1>
 
         <p
-          className={`hero-desc text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-12 leading-relaxed ${
+          className={`hero-desc text-center text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-10 sm:mb-12 leading-relaxed ${
             theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
           }`}
         >
@@ -65,16 +71,16 @@ export default function Hero() {
           veniam, quis nostrud exercitation ullamco laboris.
         </p>
 
-        <div className="hero-cta flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <div className="hero-cta flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a
             href="#projects"
-            className="w-full sm:w-auto px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5 text-base"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5 text-base"
           >
             Ver Proyectos
           </a>
           <a
             href="#contact"
-            className={`w-full sm:w-auto px-10 py-4 rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 text-base ${
+            className={`w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 text-base ${
               theme === 'dark'
                 ? 'text-gray-300 border-2 border-gray-700 hover:border-emerald-500 hover:text-emerald-400'
                 : 'text-gray-700 border-2 border-gray-300 hover:border-emerald-500 hover:text-emerald-600'
@@ -87,7 +93,7 @@ export default function Hero() {
 
       <a
         href="#about"
-        className="hero-arrow absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="hero-arrow absolute bottom-8 left-1/2 -translate-x-1/2"
       >
         <ArrowDown className={`w-6 h-6 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
       </a>

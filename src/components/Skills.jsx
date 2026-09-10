@@ -42,9 +42,9 @@ export default function Skills() {
     : 'bg-white/60 border border-gray-200/50 backdrop-blur-xl shadow-lg'
 
   return (
-    <section id="skills" ref={sectionRef} className="py-28 sm:py-32">
-      <div className="max-w-6xl mx-auto px-6 text-center">
-        <h2 className={`skills-animate text-3xl sm:text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+    <section id="skills" ref={sectionRef} style={{ padding: '120px 24px' }}>
+      <div className="w-full max-w-6xl mx-auto text-center">
+        <h2 className={`skills-animate text-3xl sm:text-4xl md:text-5xl font-bold mb-8 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
           Mis{' '}
           <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">Skills</span>
         </h2>
@@ -62,7 +62,7 @@ export default function Skills() {
             </h3>
             <div className="space-y-6">
               {skills.map((skill, i) => (
-                <div key={skill.name}>
+                <div key={skill.name} className="text-left">
                   <div className="flex justify-between mb-3">
                     <span className={`text-base font-medium ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
                       {skill.name}
