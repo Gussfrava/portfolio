@@ -531,7 +531,7 @@ function Contact() {
               <span className="contact__btn-text">Enviar Email</span>
             </a>
             <a
-              href="https://wa.me/52XXXXXXXXXX?text=Hola%20Jhonatan%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20contigo."
+              href="https://wa.me/525638314210?text=Hola%20Jhonatan%2C%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20hablar%20contigo."
               target="_blank"
               rel="noopener noreferrer"
               className="contact__btn contact__btn--whatsapp"
