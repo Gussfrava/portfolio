@@ -542,6 +542,11 @@ body.light .project-card:hover {
 .project-card__image {
   height: 180px;
   background: linear-gradient(135deg, #10b981, #06b6d4);
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-card__image {
+  transform: scale(1.05);
 }
 
 .project-card__content {
