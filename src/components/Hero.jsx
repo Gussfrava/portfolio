@@ -7,6 +7,7 @@ export default function Hero() {
   const { theme } = useTheme()
   const titleRef = useRef(null)
   const subtitleRef = useRef(null)
+  const descRef = useRef(null)
   const ctaRef = useRef(null)
   const floatingRef = useRef(null)
 
@@ -23,14 +24,19 @@ export default function Hero() {
       opacity: 0,
       duration: 0.8,
     }, '-=0.5')
+    .from(descRef.current, {
+      y: 40,
+      opacity: 0,
+      duration: 0.7,
+    }, '-=0.4')
     .from(ctaRef.current, {
       y: 30,
       opacity: 0,
       duration: 0.6,
-    }, '-=0.4')
+    }, '-=0.3')
 
     gsap.to(floatingRef.current, {
-      y: -20,
+      y: -15,
       duration: 2,
       repeat: -1,
       yoyo: true,
@@ -41,16 +47,15 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-6"
+      className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden px-4 sm:px-6"
     >
-      {/* Background gradient orbs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full blur-3xl opacity-20"
-          style={{ background: 'radial-gradient(circle, #6366f1, transparent)' }}
+          className="absolute top-1/4 left-1/4 w-64 sm:w-96 h-64 sm:h-96 rounded-full blur-3xl opacity-15"
+          style={{ background: 'radial-gradient(circle, #10b981, transparent)' }}
         />
         <div
-          className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-20"
+          className="absolute bottom-1/4 right-1/4 w-56 sm:w-80 h-56 sm:h-80 rounded-full blur-3xl opacity-15"
           style={{ background: 'radial-gradient(circle, #06b6d4, transparent)' }}
         />
       </div>
@@ -58,8 +63,8 @@ export default function Hero() {
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <p
           ref={subtitleRef}
-          className={`text-sm md:text-base font-medium tracking-widest uppercase mb-4 ${
-            theme === 'dark' ? 'text-cyan-400' : 'text-indigo-600'
+          className={`text-xs sm:text-sm md:text-base font-medium tracking-widest uppercase mb-4 sm:mb-6 ${
+            theme === 'dark' ? 'text-emerald-400' : 'text-emerald-600'
           }`}
         >
           Desarrollador Full Stack
@@ -67,9 +72,9 @@ export default function Hero() {
 
         <h1
           ref={titleRef}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight mb-6"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-6 sm:mb-8"
         >
-          <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-400 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-400 bg-clip-text text-transparent">
             Hola, soy
           </span>
           <br />
@@ -79,8 +84,8 @@ export default function Hero() {
         </h1>
 
         <p
-          ref={subtitleRef}
-          className={`text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed ${
+          ref={descRef}
+          className={`text-base sm:text-lg md:text-xl max-w-2xl mx-auto mb-8 sm:mb-10 leading-relaxed px-4 ${
             theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
           }`}
         >
@@ -89,19 +94,19 @@ export default function Hero() {
           veniam, quis nostrud exercitation ullamco laboris.
         </p>
 
-        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div ref={ctaRef} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center px-4">
           <a
             href="#projects"
-            className="px-8 py-3.5 rounded-full font-semibold text-white bg-gradient-to-r from-indigo-500 to-cyan-500 hover:from-indigo-600 hover:to-cyan-600 transition-all duration-300 hover:shadow-lg hover:shadow-indigo-500/25 hover:-translate-y-0.5"
+            className="px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold text-white bg-gradient-to-r from-emerald-500 to-teal-400 hover:from-emerald-600 hover:to-teal-500 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/25 hover:-translate-y-0.5 text-sm sm:text-base"
           >
             Ver Proyectos
           </a>
           <a
             href="#contact"
-            className={`px-8 py-3.5 rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 ${
+            className={`px-6 sm:px-8 py-3 sm:py-3.5 rounded-full font-semibold transition-all duration-300 hover:-translate-y-0.5 text-sm sm:text-base ${
               theme === 'dark'
-                ? 'text-gray-300 border border-gray-600 hover:border-indigo-500 hover:text-indigo-400'
-                : 'text-gray-700 border border-gray-300 hover:border-indigo-500 hover:text-indigo-600'
+                ? 'text-gray-300 border border-gray-700 hover:border-emerald-500 hover:text-emerald-400'
+                : 'text-gray-700 border border-gray-300 hover:border-emerald-500 hover:text-emerald-600'
             }`}
           >
             Contactame
@@ -112,9 +117,9 @@ export default function Hero() {
       <a
         href="#about"
         ref={floatingRef}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2"
+        className="absolute bottom-8 sm:bottom-10 left-1/2 -translate-x-1/2"
       >
-        <ArrowDown className={`w-6 h-6 ${theme === 'dark' ? 'text-gray-500' : 'text-gray-400'}`} />
+        <ArrowDown className={`w-5 h-5 sm:w-6 sm:h-6 ${theme === 'dark' ? 'text-gray-600' : 'text-gray-400'}`} />
       </a>
     </section>
   )

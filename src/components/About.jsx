@@ -22,6 +22,17 @@ export default function About() {
       duration: 0.8,
     })
 
+    gsap.from(sectionRef.current.querySelector('p'), {
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: 'top 75%',
+      },
+      y: 40,
+      opacity: 0,
+      duration: 0.7,
+      delay: 0.2,
+    })
+
     cardsRef.current.forEach((card, i) => {
       gsap.from(card, {
         scrollTrigger: {
@@ -38,17 +49,17 @@ export default function About() {
 
   const features = [
     {
-      icon: <Code className="w-8 h-8" />,
+      icon: <Code className="w-7 h-7" />,
       title: 'Desarrollo Web',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     },
     {
-      icon: <Palette className="w-8 h-8" />,
+      icon: <Palette className="w-7 h-7" />,
       title: 'UI/UX Design',
       description: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     },
     {
-      icon: <Zap className="w-8 h-8" />,
+      icon: <Zap className="w-7 h-7" />,
       title: 'Rendimiento',
       description: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     },
@@ -58,21 +69,21 @@ export default function About() {
     <section
       id="about"
       ref={sectionRef}
-      className="py-24 px-6 max-w-6xl mx-auto"
+      className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
       <h2
-        className={`text-4xl md:text-5xl font-bold text-center mb-6 ${
+        className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6 ${
           theme === 'dark' ? 'text-white' : 'text-gray-900'
         }`}
       >
         Sobre{' '}
-        <span className="bg-gradient-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
           Mí
         </span>
       </h2>
 
       <p
-        className={`text-center max-w-2xl mx-auto mb-16 leading-relaxed ${
+        className={`text-center max-w-2xl mx-auto mb-12 sm:mb-16 leading-relaxed text-sm sm:text-base ${
           theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
         }`}
       >
@@ -82,31 +93,28 @@ export default function About() {
         commodo consequat.
       </p>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
         {features.map((feature, i) => (
           <div
             key={i}
             ref={el => cardsRef.current[i] = el}
-            className={`p-8 rounded-2xl transition-all duration-300 hover:-translate-y-2 ${
+            className={`p-6 sm:p-8 rounded-2xl transition-all duration-300 hover:-translate-y-1 ${
               theme === 'dark'
-                ? 'bg-slate-800/50 border border-slate-700/50 hover:border-indigo-500/50'
-                : 'bg-white/60 border border-gray-200 hover:border-indigo-400'
+                ? 'bg-slate-900/50 border border-slate-800 hover:border-emerald-500/30'
+                : 'bg-white border border-gray-100 shadow-sm hover:border-emerald-400'
             }`}
-            style={{
-              backdropFilter: 'blur(12px)',
-            }}
           >
-            <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-indigo-500 to-cyan-500 flex items-center justify-center text-white mb-5">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-400 flex items-center justify-center text-white mb-4 sm:mb-5">
               {feature.icon}
             </div>
             <h3
-              className={`text-xl font-semibold mb-3 ${
+              className={`text-lg sm:text-xl font-semibold mb-3 ${
                 theme === 'dark' ? 'text-white' : 'text-gray-900'
               }`}
             >
               {feature.title}
             </h3>
-            <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>
+            <p className={`text-sm sm:text-base leading-relaxed ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
               {feature.description}
             </p>
           </div>

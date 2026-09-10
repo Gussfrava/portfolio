@@ -20,21 +20,21 @@ export default function Skills() {
         width: 0,
         opacity: 0,
         duration: 1,
-        delay: i * 0.1,
+        delay: i * 0.08,
         ease: 'power2.out',
       })
     })
   }, [])
 
   const skills = [
-    { name: 'React', level: 90, color: '#61DAFB' },
-    { name: 'JavaScript', level: 85, color: '#F7DF1E' },
-    { name: 'TypeScript', level: 80, color: '#3178C6' },
-    { name: 'Node.js', level: 75, color: '#339933' },
-    { name: 'Python', level: 70, color: '#3776AB' },
-    { name: 'Tailwind CSS', level: 95, color: '#06B6D4' },
-    { name: 'PostgreSQL', level: 65, color: '#4169E1' },
-    { name: 'Docker', level: 60, color: '#2496ED' },
+    { name: 'React', level: 90, color: '#10b981' },
+    { name: 'JavaScript', level: 85, color: '#34d399' },
+    { name: 'TypeScript', level: 80, color: '#06b6d4' },
+    { name: 'Node.js', level: 75, color: '#14b8a6' },
+    { name: 'Python', level: 70, color: '#2dd4bf' },
+    { name: 'Tailwind CSS', level: 95, color: '#10b981' },
+    { name: 'PostgreSQL', level: 65, color: '#0d9488' },
+    { name: 'Docker', level: 60, color: '#06b6d4' },
   ]
 
   const tools = [
@@ -46,21 +46,21 @@ export default function Skills() {
     <section
       id="skills"
       ref={sectionRef}
-      className="py-24 px-6 max-w-6xl mx-auto"
+      className="py-20 sm:py-24 lg:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto"
     >
       <h2
-        className={`text-4xl md:text-5xl font-bold text-center mb-6 ${
+        className={`text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6 ${
           theme === 'dark' ? 'text-white' : 'text-gray-900'
         }`}
       >
         Mis{' '}
-        <span className="bg-gradient-to-r from-indigo-500 to-cyan-400 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent">
           Skills
         </span>
       </h2>
 
       <p
-        className={`text-center max-w-2xl mx-auto mb-16 leading-relaxed ${
+        className={`text-center max-w-2xl mx-auto mb-12 sm:mb-16 leading-relaxed text-sm sm:text-base ${
           theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
         }`}
       >
@@ -68,9 +68,8 @@ export default function Skills() {
         tempor incididunt ut labore et dolore magna aliqua.
       </p>
 
-      <div className="grid md:grid-cols-2 gap-12">
-        {/* Skills bars */}
-        <div className="space-y-5">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
+        <div className="space-y-5 sm:space-y-6">
           {skills.map((skill, i) => (
             <div key={skill.name}>
               <div className="flex justify-between mb-2">
@@ -82,7 +81,7 @@ export default function Skills() {
                   {skill.name}
                 </span>
                 <span
-                  className={`text-sm ${
+                  className={`text-xs sm:text-sm ${
                     theme === 'dark' ? 'text-gray-500' : 'text-gray-400'
                   }`}
                 >
@@ -90,16 +89,16 @@ export default function Skills() {
                 </span>
               </div>
               <div
-                className={`h-2.5 rounded-full overflow-hidden ${
-                  theme === 'dark' ? 'bg-slate-700' : 'bg-gray-200'
+                className={`h-2 sm:h-2.5 rounded-full overflow-hidden ${
+                  theme === 'dark' ? 'bg-slate-800' : 'bg-gray-100'
                 }`}
               >
                 <div
                   ref={el => barsRef.current[i] = el}
-                  className="h-full rounded-full transition-all duration-1000"
+                  className="h-full rounded-full"
                   style={{
                     width: `${skill.level}%`,
-                    background: `linear-gradient(90deg, ${skill.color}, ${skill.color}88)`,
+                    background: `linear-gradient(90deg, ${skill.color}, ${skill.color}aa)`,
                   }}
                 />
               </div>
@@ -107,23 +106,22 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Tools grid */}
         <div>
           <h3
-            className={`text-xl font-semibold mb-6 ${
+            className={`text-lg sm:text-xl font-semibold mb-6 ${
               theme === 'dark' ? 'text-white' : 'text-gray-900'
             }`}
           >
             Herramientas y Tech
           </h3>
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
             {tools.map(tool => (
               <div
                 key={tool}
-                className={`p-3 rounded-xl text-center text-sm font-medium transition-all duration-300 hover:scale-105 ${
+                className={`p-3 sm:p-4 rounded-xl text-center text-xs sm:text-sm font-medium transition-all duration-300 hover:-translate-y-0.5 ${
                   theme === 'dark'
-                    ? 'bg-slate-800/50 border border-slate-700/50 text-gray-300 hover:border-indigo-500/50'
-                    : 'bg-white/60 border border-gray-200 text-gray-700 hover:border-indigo-400'
+                    ? 'bg-slate-900/50 border border-slate-800 text-gray-300 hover:border-emerald-500/30'
+                    : 'bg-white border border-gray-100 text-gray-700 hover:border-emerald-400 shadow-sm'
                 }`}
               >
                 {tool}

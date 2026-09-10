@@ -2,8 +2,8 @@
 
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
-  --color-primary: #6366f1;
-  --color-primary-light: #818cf8;
+  --color-primary: #10b981;
+  --color-primary-light: #34d399;
   --color-accent: #06b6d4;
   --color-glass: rgba(255, 255, 255, 0.1);
   --color-glass-border: rgba(255, 255, 255, 0.18);
@@ -26,19 +26,16 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Light mode */
 body.light {
   background-color: #f8fafc;
   color: #1e293b;
 }
 
-/* Dark mode */
 body.dark {
-  background-color: #0f172a;
+  background-color: #0a0f1a;
   color: #e2e8f0;
 }
 
-/* Glassmorphism utility */
 .glass {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(16px);
@@ -52,13 +49,12 @@ body.light .glass {
 }
 
 body.dark .glass {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(10, 15, 26, 0.6);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 body.light ::-webkit-scrollbar-track {
@@ -70,11 +66,11 @@ body.dark ::-webkit-scrollbar-track {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6366f1;
+  background: #10b981;
   border-radius: 4px;
 }
 
 ::selection {
-  background: #6366f1;
+  background: #10b981;
   color: white;
 }
