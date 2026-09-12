@@ -30,14 +30,14 @@
 
 /* ── Individual Card ── */
 .project-card {
-  position: relative;
+  position: sticky;
+  top: 100px;
   width: 100%;
-  min-height: 70vh;
+  height: calc(100vh - 140px);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: var(--space-md);
-  margin-bottom: var(--space-lg);
 }
 
 .project-card__inner {
@@ -183,8 +183,12 @@
 /* ── Responsive ── */
 @media (max-width: 768px) {
   .project-card {
+    position: relative;
+    top: 0;
+    height: auto;
     min-height: auto;
     padding: 0;
+    margin-bottom: var(--space-lg);
   }
 
   .project-card__inner {

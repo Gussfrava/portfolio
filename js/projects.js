@@ -11,36 +11,38 @@ export function initProjects() {
     '(min-width: 769px)': () => {
       if (prefersReducedMotion) return;
 
+      const track = document.querySelector('.projects__track');
+      const totalScroll = (cards.length - 1) * window.innerHeight;
+      track.style.paddingBottom = `${totalScroll}px`;
+
       cards.forEach((card, i) => {
         if (i === 0) return;
 
         gsap.fromTo(card,
           {
-            y: 100,
-            scale: 0.9,
+            scale: 0.8,
             opacity: 0,
           },
           {
-            y: 0,
             scale: 1,
             opacity: 1,
             ease: 'none',
             scrollTrigger: {
               trigger: card,
               start: 'top bottom',
-              end: 'top center',
+              end: 'top 100px',
               scrub: true,
             },
           }
         );
 
-        gsap.to(card.previousElementSibling, {
+        gsap.to(card, {
           scale: 0.95,
           ease: 'none',
           scrollTrigger: {
             trigger: card,
-            start: 'top bottom',
-            end: 'top center',
+            start: 'top 100px',
+            end: 'bottom 100px',
             scrub: true,
           },
         });
