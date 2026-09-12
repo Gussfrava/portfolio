@@ -3,69 +3,51 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export function initProjects() {
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) return;
 
   const cards = gsap.utils.toArray('.project-card');
   if (!cards.length) return;
 
   const mm = ScrollTrigger.matchMedia({
     '(min-width: 769px)': () => {
+      if (prefersReducedMotion) return;
+
       cards.forEach((card, i) => {
-        const stickyOffset = 80 + (i * 12);
-        card.style.top = `${stickyOffset}px`;
-
-        if (i === 0) {
-          card.classList.add('is-active');
-        }
-
-        ScrollTrigger.create({
-          trigger: card,
-          start: 'top center',
-          end: 'bottom center',
-          onEnter: () => {
-            cards.forEach(c => c.classList.remove('is-active'));
-            card.classList.add('is-active');
-          },
-          onEnterBack: () => {
-            cards.forEach(c => c.classList.remove('is-active'));
-            card.classList.add('is-active');
-          },
-        });
+        if (i === 0) return;
 
         gsap.fromTo(card,
           {
-            y: 80,
-            scale: 0.92,
+            y: 100,
+            scale: 0.9,
+            opacity: 0,
           },
           {
             y: 0,
             scale: 1,
+            opacity: 1,
             ease: 'none',
             scrollTrigger: {
               trigger: card,
-              start: 'top 85%',
-              end: 'top 20%',
-              scrub: 0.5,
+              start: 'top bottom',
+              end: 'top center',
+              scrub: true,
             },
           }
         );
 
-        if (i > 0) {
-          gsap.to(card, {
-            scale: 0.96,
-            scrollTrigger: {
-              trigger: card,
-              start: 'top 10%',
-              end: 'top -60%',
-              scrub: 0.5,
-            },
-          });
-        }
+        gsap.to(card.previousElementSibling, {
+          scale: 0.95,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top bottom',
+            end: 'top center',
+            scrub: true,
+          },
+        });
       });
     },
     '(max-width: 768px)': () => {
       cards.forEach((card) => {
-        card.classList.add('is-active');
         gsap.fromTo(card,
           { opacity: 0, y: 40 },
           {
