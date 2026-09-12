@@ -2,7 +2,7 @@
   /* ── Paleta (Dark - Default) ── */
   --bg-primary: #081018;
   --bg-secondary: #0D1726;
-  --bg-card: rgba(13, 23, 38, 0.45);
+  --bg-card: #0D1726;
 
   --text-primary: #FFFFFF;
   --text-secondary: #CBD5E1;
@@ -95,7 +95,7 @@
 [data-theme="light"] {
   --bg-primary: #F0FDF4;
   --bg-secondary: #E2E8F0;
-  --bg-card: rgba(255, 255, 255, 0.6);
+  --bg-card: #FFFFFF;
 
   --text-primary: #0F172A;
   --text-secondary: #334155;

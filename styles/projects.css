@@ -53,7 +53,7 @@
   grid-template-columns: 1.1fr 1fr;
   gap: var(--space-xl);
   align-items: center;
-  background: #081018;
+  background: var(--bg-card);
   border: 1px solid rgba(0, 223, 129, 0.12);
   border-radius: 16px;
   padding: var(--space-xl);
