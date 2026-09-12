@@ -11,10 +11,6 @@ export function initProjects() {
     '(min-width: 769px)': () => {
       if (prefersReducedMotion) return;
 
-      const track = document.querySelector('.projects__track');
-      const totalScroll = (cards.length - 1) * window.innerHeight;
-      track.style.paddingBottom = `${totalScroll}px`;
-
       cards.forEach((card, i) => {
         if (i === 0) return;
 
