@@ -3,8 +3,20 @@
   padding-block: var(--space-section);
 }
 
+/* ── Track ── */
+.projects__track {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ── Header (sticky on top) ── */
 .projects__header {
-  margin-bottom: var(--space-xl);
+  position: sticky;
+  top: 100px;
+  z-index: 20;
+  padding: var(--space-xl) var(--space-md) var(--space-md);
 }
 
 .projects__title {
@@ -18,14 +30,6 @@
   font-size: var(--fs-body);
   color: var(--text-muted);
   margin-top: var(--space-xs);
-}
-
-/* ── Track ── */
-.projects__track {
-  position: relative;
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 /* ── Individual Card ── */
@@ -48,13 +52,11 @@
   grid-template-columns: 1.1fr 1fr;
   gap: var(--space-xl);
   align-items: center;
-  background: var(--bg-card);
+  background: var(--bg-primary);
   border: 1px solid rgba(0, 223, 129, 0.12);
   border-radius: 16px;
   padding: var(--space-xl);
   overflow: hidden;
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
   box-shadow: var(--shadow-lg);
 }
 
@@ -182,6 +184,12 @@
 
 /* ── Responsive ── */
 @media (max-width: 768px) {
+  .projects__header {
+    position: relative;
+    top: 0;
+    padding: 0 0 var(--space-lg);
+  }
+
   .project-card {
     position: relative;
     top: 0;
