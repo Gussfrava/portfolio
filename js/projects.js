@@ -11,16 +11,35 @@ export function initProjects() {
   const mm = ScrollTrigger.matchMedia({
     '(min-width: 769px)': () => {
       cards.forEach((card, i) => {
+        const stickyOffset = 80 + (i * 12);
+        card.style.top = `${stickyOffset}px`;
+
+        if (i === 0) {
+          card.classList.add('is-active');
+        }
+
+        ScrollTrigger.create({
+          trigger: card,
+          start: 'top center',
+          end: 'bottom center',
+          onEnter: () => {
+            cards.forEach(c => c.classList.remove('is-active'));
+            card.classList.add('is-active');
+          },
+          onEnterBack: () => {
+            cards.forEach(c => c.classList.remove('is-active'));
+            card.classList.add('is-active');
+          },
+        });
+
         gsap.fromTo(card,
           {
             y: 80,
             scale: 0.92,
-            opacity: 0.3,
           },
           {
             y: 0,
             scale: 1,
-            opacity: 1,
             ease: 'none',
             scrollTrigger: {
               trigger: card,
@@ -46,6 +65,7 @@ export function initProjects() {
     },
     '(max-width: 768px)': () => {
       cards.forEach((card) => {
+        card.classList.add('is-active');
         gsap.fromTo(card,
           { opacity: 0, y: 40 },
           {

@@ -40,6 +40,17 @@
   align-items: center;
   justify-content: center;
   padding: var(--space-md);
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:not(:first-child) {
+  opacity: 0;
+}
+
+.project-card.is-active {
+  opacity: 1;
+  z-index: 10;
 }
 
 .project-card__inner {
