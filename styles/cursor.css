@@ -1,0 +1,61 @@
+/* ── Cursor Principal ── */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: difference;
+  will-change: transform;
+}
+
+.cursor__dot {
+  width: 100%;
+  height: 100%;
+  background: var(--text-primary);
+  border-radius: 50%;
+}
+
+/* ── Cursor Trail ── */
+.cursor-trail {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform;
+}
+
+/* ── Hover en interactivos ── */
+.cursor--hover .cursor__dot {
+  transform: scale(0);
+}
+
+.cursor--hover + .cursor-trail {
+  width: 64px;
+  height: 64px;
+  border-color: var(--accent-1);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+/* ── Ocultar en móvil ── */
+@media (pointer: coarse) {
+  .cursor,
+  .cursor-trail {
+    display: none !important;
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .cursor,
+  .cursor-trail {
+    transition: none !important;
+  }
+}
