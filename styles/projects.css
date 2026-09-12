@@ -1,5 +1,6 @@
 /* ── Projects Section ── */
 .section--projects {
+  display: block;
   padding-block: var(--space-section);
 }
 
@@ -17,6 +18,7 @@
   top: 100px;
   z-index: 20;
   padding: var(--space-xl) var(--space-md) var(--space-md);
+  background: #081018;
 }
 
 .projects__title {
@@ -52,7 +54,7 @@
   grid-template-columns: 1.1fr 1fr;
   gap: var(--space-xl);
   align-items: center;
-  background: var(--bg-primary);
+  background: #081018;
   border: 1px solid rgba(0, 223, 129, 0.12);
   border-radius: 16px;
   padding: var(--space-xl);
